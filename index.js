@@ -38,7 +38,7 @@ app.use("/rooms",roomsRoute)
 
 
 //the app start working when it's listening to a specific port
-app.listen(8800, ()=>{
+app.listen(process.env.PORT, ()=>{
     connect()
     console.log("connected to backend")
-})
+}) || 3002
