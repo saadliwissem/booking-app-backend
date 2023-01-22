@@ -33,10 +33,10 @@ mongoose.connection.on("connected",()=>{
 const uri="https://booking-app-backend.adaptable.app"
 //middlewares
 app.use(express.json())
-app.use(/*uri+*/"/auth",authRoute)
-app.use(/*uri+*/"/users",usersRoute)
-app.use(/*uri+*/"/hotels",hotelsRoute)
-app.use(/*uri+*/ "/rooms",roomsRoute)
+app.use(uri+"/auth",authRoute)
+app.use(uri+"/users",usersRoute)
+app.use(uri+"/hotels",hotelsRoute)
+app.use(uri+ "/rooms",roomsRoute)
 
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500;
