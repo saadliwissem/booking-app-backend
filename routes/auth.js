@@ -1,12 +1,7 @@
 import express from "express";
+import { login, register } from "../controllers/authController.js";
 const router = express.Router()
-//the main auth page 
-router.get("/",(req,res)=>{
-    res.send("done")
-})
-//the register auth page 
-router.get("/register",(req,res)=>{
-    res.send("register page")
-})
+router.post("/register" , register)
+router.post("/login",login )
 
 export default router
