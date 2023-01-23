@@ -30,7 +30,7 @@ mongoose.connection.on("connected",()=>{
 })
 
 //the url for the API
-const uri="https://booking-app-backend.adaptable.app"
+const uri="https://app-booking-bend.adaptable.app/"
 //middlewares
 app.use(express.json())
 app.use(uri+"/auth",authRoute)
