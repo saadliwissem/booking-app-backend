@@ -31,7 +31,7 @@ mongoose.connection.on("connected",()=>{
 })
 
 //the url for the API
-const uri="https://app-booking-bend.adaptable.app/"
+const uri="https://bookingappbend.adaptable.app/"
 //middlewares
 app.use(cors())
 app.use(cookieParser())
