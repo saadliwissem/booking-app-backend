@@ -4,10 +4,10 @@
 
  // create room function
  export const CreateRoom = async (req,res,next)=>{
-    const HotelId =res.params.HotelId;
+    const HotelId =req.params.HId;
     const newRoom = new Room(req.body);
     try{
-        const savedRoom = await Room.save()
+        const savedRoom = await newRoom.save()
         try{
             await Hotel.findByIdAndUpdate(HotelId,{
                 $push:{rooms:savedRoom._id},

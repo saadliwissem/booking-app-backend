@@ -3,7 +3,7 @@ const router = express.Router()
 import { verifyAdmin } from "../utils/verifyToken.js";
 import { CreateRoom,updateRoom,getRoom,getRooms,deleteRoom } from "../controllers/roomController.js";
 //create
-router.post("/HotelId", verifyAdmin,CreateRoom);
+router.post("/:HId", verifyAdmin,CreateRoom);
 //update
 router.put("/:id",verifyAdmin, updateRoom);
 //delete method
