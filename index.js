@@ -31,15 +31,15 @@ mongoose.connection.on("connected",()=>{
 })
 
 //the url for the API
-const uri="https://bookingappbend.adaptable.app/"
+//const uri="https://bookingappbend.adaptable.app/"
 //middlewares
 app.use(cors())
 app.use(cookieParser())
 app.use(express.json())
-app.use(uri+"/auth",authRoute)
-app.use(uri+"/users",usersRoute)
-app.use(uri+"/hotels",hotelsRoute)
-app.use( uri+"/rooms",roomsRoute)
+app.use("/auth",authRoute)
+app.use("/users",usersRoute)
+app.use("/hotels",hotelsRoute)
+app.use( "/rooms",roomsRoute)
 
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500;
