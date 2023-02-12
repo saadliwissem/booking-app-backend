@@ -6,24 +6,12 @@ import roomsRoute from "./routes/rooms.js";
 import hotelsRoute from "./routes/hotels.js";
 import usersRoute from "./routes/users.js";
 import cookieParser from "cookie-parser";
-import cors from "cors";
+//import cors from "cors";
 //the express app
 const app = express();
 //configuring .env file
 dotenv.config();
 //config cross origin
-app.use((req, res, next) => {
-  res.setHeader(Access-Control-Allow-Origin, "*");
-  res.setHeader(
-    Access-Control-Allow-Headers,
-    Origin, X-Requested-With, Content-Type, Accept
-  );
-  res.setHeader(
-    Access-Control-Allow-Methods,
-    GET, POST, PATCH, DELETE, OPTIONS
-  );
-  next();
-});
 //mongoose connection
 const connect = () => {
   try {
@@ -40,7 +28,7 @@ mongoose.connection.on("connected", () => {
 });
 
 //middlewares
-app.use(cors("*"));
+//.use(cors("*"));
 app.use(cookieParser());
 app.use(express.json());
 app.use("/auth", authRoute);
