@@ -6,7 +6,7 @@ import roomsRoute from "./routes/rooms.js";
 import hotelsRoute from "./routes/hotels.js";
 import usersRoute from "./routes/users.js";
 import cookieParser from "cookie-parser";
-//import cors from "cors";
+import cors from "cors";
 //the express app
 const app = express();
 //configuring .env file
@@ -28,7 +28,7 @@ mongoose.connection.on("connected", () => {
 });
 
 //middlewares
-//.use(cors("*"));
+app.use(cors("*"));
 app.use(cookieParser());
 app.use(express.json());
 app.use("/auth", authRoute);
