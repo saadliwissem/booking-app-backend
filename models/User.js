@@ -20,6 +20,21 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    country: {
+      type: String,
+      required: true,
+    },
+    img: {
+      type: String,
+    },
+    city: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );
